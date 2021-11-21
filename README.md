@@ -57,5 +57,6 @@ $ make run1
 ```
 For test case 2: 
 ```bash
-$ make run2 , and so on
+$ make run2 
 ```
+And so on...
