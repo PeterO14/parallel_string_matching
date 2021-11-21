@@ -36,11 +36,11 @@ Each child process needs to traverse the sub-directory assigned to it recursivel
 
 ## Project Folder Structure
 The project folder contains “include”, “lib”, “src”, “input” and “output” folders, as well as Makefile, README and two executables.
-● “include” folder: .h header files
-● “lib” folder: .o library files
-● “src” folder: .c source files
-● “input” folder: contains input folders
-● “output” folder: Use $ make run to create output files for all test cases ● Two executables: master and child
+1. “include” folder: .h header files
+2. “lib” folder: .o library files
+3. “src” folder: .c source files
+4. “input” folder: contains input folders
+5. “output” folder: Use $ make run to create output files for all test cases ● Two executables: master and child
 
 ## Execution Syntax
 
