@@ -26,7 +26,7 @@ String matching needs to be case sensitive. Use of the strstr() function provide
 The root directory may contain multiple first level subdirectories and files. One child process needs to be created for every first level subdirectory. This child process is responsible for searching all the files in its sub directories. A pipe must also be created for every child. Pipe is used by the child to communicate the results back to the parent.
 Consider a possible directory structure as shown in Fig 1. Here the root directory /root contains 2 first level subdirectories, namely /root/f1 and /root/f2. Child 1 as shown in the figure, is responsible for searching files in /root/f1. Child 2 as shown in the figure is responsible for searching files in /root/f2.
 Note that no new child is created for the /root/f2/f3 directory. Child processes are only created for the first level directories. Also note that parent is responsible for searching first level files in this case File 5 and no new child is created for this.
-!screenshot[figure1.png]
+![screenshot](figure1.png)
 
 ### Pipes and I/O Redirection
 Pipe will be used by the child to communicate search results to the parent. Parent reads from the pipe and prints it to the console. Each child’s STDOUT must be redirected to the write end of the pipe. One pipe must be created for each child process. In Fig 1, two pipes are created, one for each child.
