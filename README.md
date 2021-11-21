@@ -40,7 +40,8 @@ The project folder contains “include”, “lib”, “src”, “input” and
 2. “lib” folder: .o library files
 3. “src” folder: .c source files
 4. “input” folder: contains input folders
-5. “output” folder: Use $ make run to create output files for all test cases ● Two executables: master and child
+5. “output” folder: Use $ make run to create output files for all test cases
+6. Two executables: master and child
 
 ## Execution Syntax
 
