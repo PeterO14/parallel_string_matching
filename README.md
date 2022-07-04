@@ -8,7 +8,6 @@ You will be using File I/O, Pipes, directory operations, links and I/O redirecti
 
 ### Input
 This program will take 2 arguments, the string to be searched and the path to the root directory. “String” is a single English word and “root directory” is any directory that needs to be searched.
-Example:
 ```bash
 % $ ./master <Input Directory path> <Word to search>
 ```
