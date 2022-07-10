@@ -1,18 +1,14 @@
-#include <stdio.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include "utils.h"
-#include <sys/stat.h>
 
-/*
-	Searches for pattern in file and writes the entire line containing the pattern to STDOUT
-	Format for print: [path to file] : Line in the file
-	@Params:
-		path - path to the file
-		pattern : pattern to be searched
-*/
+#include <sys/stat.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+
+// Searches for pattern in file and writes the entire line containing the pattern to STDOUT
 void searchPatternInFile(char* path, char* pattern) {
 	FILE* fp;
 	int bufferLength = 255;

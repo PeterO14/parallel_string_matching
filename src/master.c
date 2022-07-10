@@ -1,28 +1,21 @@
-/*test machine: csel-kh1260-15.cselabs.umn.edu
-* group number: G[55]
-* name: Isaac Blaine-Sauer , [Peter Ortiz]
-* x500: BLAIN075 , [ORTIZ363] */ 
-
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/wait.h>
-#include <unistd.h>
-#include <dirent.h>
-#include <string.h>
-#include <stdlib.h>
 #include "utils.h"
+
+#include <dirent.h>
 #include <errno.h>
 #include <sys/stat.h>
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 
 int main(int argc, char** argv) {
-
 	// Check for correct number of arguments
-	if(argc != 3){
-		fprintf(stderr,"Usage ./a.out [Path to Directory] [Pattern to search] \n");
-		exit(EXIT_FAILURE);
+	if(argc != 3) {
+		fprintf(stderr,"Usage ./a.out [Path to Directory] [Pattern to search \n");
+		exit(1);
 	}
 
 	// Declare necessary variables 
@@ -38,7 +31,6 @@ int main(int argc, char** argv) {
 	struct dirent* directoryEntry;	
 
 	pid_t parentProcess;
-	// char processName[256];
 
 	char* newPath[1000];
 	int pipefds[10][2];
@@ -54,7 +46,7 @@ int main(int argc, char** argv) {
 		exit(1);
 	}
 
-	// Read all files and sub-directories in a directory and spawn child processes as necessary
+	// Read all files and sub-directories in a directory and spawn child        processes as necessary
 	while ((directoryEntry = readdir(rootDirectory)) != NULL) {
 		// No need to print out (., ..,  )
 		if (!strcmp(directoryEntry->d_name, ".") || !strcmp(directoryEntry->d_name, "..") || !strcmp(directoryEntry->d_name," ")) {

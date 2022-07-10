@@ -1,45 +1,33 @@
-/*test machine: csel-kh1260-15.cselabs.umn.edu
-* group number: G[55]
-* name: Isaac Blaine-Sauer , [Peter Ortiz]
-* x500: BLAIN075 , [ORTIZ363] */ 
-
-#include<stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include<sys/wait.h>
-#include <unistd.h>
-#include <dirent.h>
-#include<string.h>
-#include<stdlib.h>
 #include "utils.h"
+
+#include <dirent.h>
 #include <errno.h>
 #include <sys/stat.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 
-/*
-	Traverse the directory recursively and search for pattern in files.
-	@params:
-		name - path to the directory
-		pattern - pattern to be recusrively searched in the directory
-		
-	Note: Feel free to modify the function header if neccessary
-	
-*/
+// Traverse the directory recursively and search for pattern in files.
 void dirTraverse(const char* name, char* pattern) {
 	// Necessary Variables
-	DIR* dir;
+	DIR* directory;
 	struct stat metaData;
 	int linkChecker;
 	struct dirent* entry;
 	char* newPath[256];
 	
 	// Recursively traverse the directory and call SearchForPattern when neccessary
-	dir = opendir(name);
-	if (dir == NULL) {
+	directory = opendir(name);
+	if (directory == NULL) {
 		printf("Can't open directory: %s\n", name);
 		exit(0);
 	}
-	while((entry = readdir(dir)) != NULL) {
+
+	while((entry = readdir(directory)) != NULL) {
 		if (!strcmp(entry->d_name, ".") || !strcmp(entry->d_name, "..") || !strcmp(entry->d_name," ")) {
 
 		} else {
