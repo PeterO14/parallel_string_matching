@@ -1,8 +1,3 @@
-/*test machine: csel-kh1260-15.cselabs.umn.edu
-* group number: G[55]
-* name: Isaac Blaine-Sauer , [Peter Ortiz]
-* x500: BLAIN075 , [ORTIZ363] */ 
-
 #include <stdio.h>
 #include <sys/types.h>
 #include <stdlib.h>
@@ -28,6 +23,7 @@ void searchPatternInFile(char* path, char* pattern) {
 		fprintf(stderr,"Error opening file: %s \n",path);
 		exit(1);
 	}
+	
 	// Read file line by line and check if pattern exists in the line
 	while (fgets(buffer, bufferLength, fp)) {
 		if (strstr(buffer, pattern) != NULL) {
